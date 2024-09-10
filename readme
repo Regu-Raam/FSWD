@@ -1,0 +1,68 @@
+HTML (index.html)
+Document Structure:
+<!DOCTYPE html>: Declares the document type and version (HTML5).
+<html lang="en">: Sets the language of the document to English.
+<head>: Contains metadata and links to stylesheets and fonts.
+<body>: Contains the content of the page.
+Header:
+<header>: Contains the main title of the application.
+Form:
+<form>: Includes an input field for adding new to-do items, a button for submission, and a dropdown menu to filter to-dos.
+<input type="text" class="todo-input">: The text field where users type new to-do items.
+<button class="todo-button" type="submit">: The button that users click to add a new to-do item.
+<select name="todos" class="filter-todo">: Dropdown to filter to-do items based on their status (all, completed, incomplete).
+To-Do Container:
+<div class="todo-container">: Contains the list of to-dos.
+<ul class="todo-list"></ul>: The unordered list where individual to-do items will be appended.
+Script:
+<script src="./script.js"></script>: Links to the JavaScript file where the functionality of the application is defined.
+
+
+CSS (styles.css)
+General Styles:
+*: Applies a universal reset (no margin, padding, box-sizing border box) to all elements.
+body: Sets the background color, text color, font, and ensures the body takes up the full viewport height.
+Header and Form:
+Styles the header and form to center their contents both vertically and horizontally.
+Form Input and Button:
+Styles the input and button with padding, font size, border, and background color.
+Includes hover effects for the button.
+
+To-Do List Styles:
+Styles the to-do list and individual to-do items with margins, padding, font size, and colors.
+Includes styles for completed tasks (text-decoration and opacity) and transitions for sliding effects.
+Select Dropdown:
+Customizes the appearance of the dropdown menu and its arrow.
+
+
+
+JavaScript (script.js)
+
+Variables:
+todoInput, todoButton, todoList, filterOption: DOM elements selected for later manipulation.
+
+Event Listeners:
+DOMContentLoaded: Loads existing to-dos from local storage when the page is first loaded.
+click on todoButton: Calls addTodo() to add a new to-do item.
+click on todoList: Calls deleteCheck() to delete or mark a to-do item as completed.
+change on filterOption: Calls filterTodo() to filter the displayed to-dos based on the selected option.
+
+Functions:
+addTodo(event): Adds a new to-do item to the list:
+Prevents the form from submitting the traditional way.
+Creates a new div with todo class and appends a li with the to-do text.
+Adds "Complete" and "Trash" buttons.
+Clears the input field and saves the new to-do to local storage.
+deleteCheck(e): Handles clicks on to-do items:
+Deletes the item if the "Trash" button is clicked.
+Toggles the completion status if the "Complete" button is clicked.
+filterTodo(e): Filters the displayed to-do items based on the selected filter option (all, completed, incomplete).
+saveLocalTodos(todo): Saves a new to-do to local storage.
+getLocalTodos(): Retrieves and displays saved to-dos from local storage when the page loads.
+removeLocalTodos(todo): Removes a to-do from local storage when it’s deleted from the list.
+
+Summary
+HTML: Sets up the structure and elements of the to-do list.
+CSS: Styles the appearance of the to-do list and its components.
+JavaScript: Adds functionality to the to-do list, including adding, deleting, marking as complete, filtering, and persisting to-dos in local storage.
+This combination allows for a fully functional and styled to-do list that interacts with the user and maintains data between page reloads.
